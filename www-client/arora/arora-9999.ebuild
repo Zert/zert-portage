@@ -1,6 +1,6 @@
 ### Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/io/io-2009.01.02-r1.ebuild,v 1.1 2009/01/02 15:33:32 araujo Exp $
+# $$
 
 EAPI=2
 inherit git eutils qt4
