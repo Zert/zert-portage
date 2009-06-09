@@ -18,5 +18,5 @@ RDEPEND=""
 
 src_install() {
 		install -d "${D}/usr/bin/" || die "install failed"
-		install src/showmecode.py "${D}/usr/bin/" || die "install failed"
+		install src/showmecode.py "${D}/usr/bin/showmecode" || die "install failed"
 }
