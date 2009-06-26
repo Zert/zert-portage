@@ -17,7 +17,7 @@ DEPEND="dev-lang/python
 		dev-python/docutils
 		dev-python/simplejson
 		dev-python/pygments
-		dev-python/reportlab
+		>=dev-python/reportlab-2.1
 		dev-python/imaging"
 
 src_install() {
