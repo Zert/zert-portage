@@ -13,7 +13,9 @@ LICENSE="MIT"
 KEYWORDS="amd64 ia64 ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND="dev-python/docutils
+DEPEND="dev-lang/python
+		dev-python/docutils
+		dev-python/simplejson
 		dev-python/pygments
 		dev-python/reportlab
 		dev-python/imaging"
