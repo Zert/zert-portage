@@ -11,14 +11,15 @@ HOMEPAGE="http://rst2pdf.googlecode.com/"
 SLOT="0"
 LICENSE="MIT"
 KEYWORDS="amd64 ia64 ppc ppc64 sparc x86"
-IUSE=""
+IUSE="math"
 
 DEPEND="dev-lang/python
 		dev-python/docutils
 		dev-python/simplejson
 		dev-python/pygments
 		>=dev-python/reportlab-2.1
-		dev-python/imaging"
+		dev-python/imaging
+		math? ( dev-python/matplotlib )"
 
 src_install() {
 		distutils_src_install
