@@ -18,7 +18,7 @@ src_install() {
 	sitedir=$(python_get_sitedir)/qpid
 	cd ${S}/python/
 	mkdir -p ${D}/${sitedir} || die "cannot create ${sitedir}"
-	cp qpid/*.py ${sitedir}
+	cp qpid/*.py ${D}/${sitedir}
 }
 
 src_compile() {
