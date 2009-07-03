@@ -17,7 +17,7 @@ DEPEND="dev-lang/python"
 src_install() {
 	sitedir=$(python_get_sitedir)/qpid
 	cd ${S}/python/
-	mkdir -p ${sitedir} || die "cannot create ${sitedir}"
+	mkdir -p ${D}/${sitedir} || die "cannot create ${sitedir}"
 	cp qpid/*.py ${sitedir}
 }
 
