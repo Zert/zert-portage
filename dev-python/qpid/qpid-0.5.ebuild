@@ -21,7 +21,7 @@ src_install() {
 }
 
 src_compile() {
-
+	true
 }
 
 pkg_postinst() {
