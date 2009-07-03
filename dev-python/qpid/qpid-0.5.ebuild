@@ -20,6 +20,10 @@ src_install() {
 	cp qpid/*.py ${sitedir}
 }
 
+src_compile() {
+
+}
+
 pkg_postinst() {
     python_mod_optimize $(python_get_sitedir)/qpid
 }
