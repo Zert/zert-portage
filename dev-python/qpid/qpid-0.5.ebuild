@@ -15,10 +15,12 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 DEPEND="dev-lang/python"
 
 src_install() {
-	sitedir=$(python_get_sitedir)/qpid
 	cd ${S}/python/
-	mkdir -p ${D}/${sitedir} || die "cannot create ${sitedir}"
-	cp qpid/*.py ${D}/${sitedir}
+	for i in qpid mllib qmf; do
+		sitedir=$(python_get_sitedir)/${i}
+		mkdir -p ${D}/${sitedir} || die "cannot create ${sitedir}"
+		cp ${i}/*.py ${D}/${sitedir}
+	done
 }
 
 src_compile() {
@@ -26,10 +28,9 @@ src_compile() {
 }
 
 pkg_postinst() {
-    python_mod_optimize $(python_get_sitedir)/qpid
+    python_mod_optimize $(python_get_sitedir)/{qpid,mllib,qmf}
 }
 
 pkg_postrm() {
-    python_mod_cleanup /usr/$(get_libdir)/python*/site-packages/qpid
+    python_mod_cleanup /usr/$(get_libdir)/python*/site-packages/{qpid,mllib,qmf}
 }
-
