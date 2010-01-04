@@ -6,7 +6,7 @@ inherit git
 
 DESCRIPTION="Io is a small, prototype-based programming language."
 HOMEPAGE="http://www.iolanguage.com"
-EGIT_REPO_URI="git://github.com/Zert/io.git"
+EGIT_REPO_URI="git://github.com/stevedekorte/io.git"
 
 
 LICENSE="BSD"
