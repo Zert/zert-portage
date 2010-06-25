@@ -15,6 +15,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}.poll.patch
+}
+
 src_install() {
 	emake install DESTDIR="${D}" || die "Install failed"
 	dodoc README NEWS ChangeLog || die "dodoc failed"
