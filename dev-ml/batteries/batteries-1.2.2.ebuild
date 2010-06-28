@@ -39,7 +39,7 @@ src_install() {
 	DPATH="${D}/$(ocamlfind printconf destdir)"
 	mkdir -p ${DPATH}
 	emake DESTDIR=${DPATH} install || die "emake install failed"
-	use doc && (emake DOCROOT="${D}/doc/${P}" install-doc || die "make install-doc failed")
+	use doc && (emake DOCROOT="${D}/usr/share/doc/ocaml-batteries" install-doc || die "make install-doc failed")
 
 	dodoc ocamlinit
 }
