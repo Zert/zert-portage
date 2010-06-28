@@ -1,0 +1,17 @@
+--- Makefile.orig	2010-06-28 12:23:56.794547715 +0700
++++ Makefile	2010-06-28 12:28:23.428776798 +0700
+@@ -53,11 +53,12 @@
+ 	test -e apidocs || ln -s _build/batteries.docdir apidocs
+ 
+ install: all
+-	ocamlfind install estring libs/estring/META \
++	ocamlfind install -destdir $(DESTDIR) estring \
++		libs/estring/META \
+ 		_build/libs/estring/*.cmo \
+ 		_build/libs/estring/*.cmi \
+ 		_build/libs/estring/*.mli
+-	ocamlfind install $(NAME) $(INSTALL_FILES)
++	ocamlfind install -destdir $(DESTDIR) $(NAME) $(INSTALL_FILES)
+ 
+ uninstall:
+ 	ocamlfind remove estring
