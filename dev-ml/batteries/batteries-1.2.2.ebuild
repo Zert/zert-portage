@@ -22,12 +22,6 @@ RDEPEND=">=dev-lang/ocaml-3.11
 
 DEPEND="${RDEPEND}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${P}-destdir.patch"
-}
-
 src_compile() {
 	emake || die "emake all failed"
 	if use doc; then
@@ -37,8 +31,8 @@ src_compile() {
 
 src_install() {
 	DPATH="${D}/$(ocamlfind printconf destdir)"
-	mkdir -p ${DPATH}
-	emake DESTDIR=${DPATH} install || die "emake install failed"
+	mkdir -p "${DPATH}"
+	emake OCAMLFIND_DESTDIR="${DPATH}" install || die "emake install failed"
 	use doc && (emake DOCROOT="${D}/usr/share/doc/ocaml-batteries" install-doc || die "make install-doc failed")
 
 	dodoc ocamlinit
